@@ -1,0 +1,35 @@
+gfs2-utils (3.1.3-1.2) unstable; urgency=low
+
+  [ Salvatore Bonaccorso ]
+  * Remove old conffile /etc/init.d/gfs2-tools from gfs2-tools package.
+    Add a Pre-Depends on dpkg to use dpkg-maintscript-helper. Add
+    ${misc:Pre-Depends} to Pre-Depends control file field.
+    Add debian/gfs2-utils.maintscript containing the rm_conffile command to
+    remove /etc/init.d/gfs2-tools init script from superseeded gfs2-tools
+    package. (Closes: #698375)
+
+  [ Andreas Beckmann ]
+  * Non-maintainer upload.
+  * Trick dpkg-maintscript-helper to also run on initial install.
+  * Do not pass obsolete 'start' arguments to update-rc.d
+
+ -- Andreas Beckmann <anbe@debian.org>  Sat, 10 Jan 2015 12:21:37 +0100
+
+gfs2-utils (3.1.3-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add missing Depends on gfs2-cluster for gfs2-utils.
+    Fix "gfs2-utils: fails to install due to incorrect dependencies in
+    init.d LSB header". gfs2-utils init script contains a dependency on the
+    service providing gfs_controld, which in turn is provided by
+    gfs2-cluster. (Closes: #685061)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 10 Jan 2013 19:36:49 +0100
+
+gfs2-utils (3.1.3-1) unstable; urgency=low
+
+  * Initial release as stand-alone package; this used to be part of the
+    redhat-cluster package but was split out upstream-wise by RedHat
+  * thanks to Andres Rodriguez for all the great work on this package!
+
+ -- Martin Loschwitz <madkiss@debian.org>  Mon, 6 Aug 2012 11:55:00 +0200

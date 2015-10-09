@@ -1,0 +1,28 @@
+diff -ruN gfs2-utils.old/gfs2/init.d/gfs2 gfs2-utils/gfs2/init.d/gfs2
+--- gfs2-utils.old/gfs2/init.d/gfs2	2012-08-06 12:09:04.741911507 +0000
++++ gfs2-utils/gfs2/init.d/gfs2	2012-08-06 12:08:27.484900673 +0000
+@@ -7,8 +7,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides:		gfs2
+-# Required-Start:	$network cman gfs_controld
+-# Required-Stop:	$network cman gfs_controld
++# Required-Start:	$remote_fs $network cman gfs_controld
++# Required-Stop:	$remote_fs $network cman gfs_controld
+ # Default-Start:	S
+ # Default-Stop:		0 6
+ # Short-Description:	mount/unmount gfs2 filesystems configured in /etc/fstab
+diff -ruN gfs2-utils.old/gfs2/init.d/gfs2-cluster gfs2-utils/gfs2/init.d/gfs2-cluster
+--- gfs2-utils.old/gfs2/init.d/gfs2-cluster	2012-08-06 12:09:08.453902899 +0000
++++ gfs2-utils/gfs2/init.d/gfs2-cluster	2012-08-06 12:08:39.609910408 +0000
+@@ -9,8 +9,8 @@
+ 
+ ### BEGIN INIT INFO
+ # Provides: gfs_controld
+-# Required-Start: $network cman
+-# Required-Stop: $network cman
++# Required-Start: $remote_fs $network cman
++# Required-Stop: $remote_fs $network cman
+ # Should-Start:
+ # Should-Stop:
+ # Default-Start:	S
